@@ -37,7 +37,8 @@ const getVisibleArticles = (articles, visibilityFilter) => {
 const mapStateToProps = (state) => {
   const visibleArticles = getVisibleArticles(state.articles, state.visibilityFilter)
   return {
-    articles: getSortedArticles(visibleArticles, state.sortParameter)
+    articles: getSortedArticles(visibleArticles, state.sortParameter),
+    isFiltered: state.visibilityFilter[0] !== null
   }
 }
 

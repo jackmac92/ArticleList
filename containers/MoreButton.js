@@ -4,7 +4,7 @@ import { getArticles } from '../actions'
 import Link from '../components/Link'
 
 let moreButton = ({ onClick }) => (
-  <button onClick={onClick}>
+  <button className="fetch-button" onClick={onClick}>
     Load More
   </button>
 )

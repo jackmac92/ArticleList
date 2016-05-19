@@ -1,9 +1,18 @@
 import React, { PropTypes } from 'react'
 import Article from './Article'
 import Header from './Header'
-const ArticleIndex = ({ articles }) => (
+import FilterLink from '../containers/FilterLink'
+
+const clearFilters = (
+	<FilterLink filter={[null, null]}>Clear Filters</FilterLink>
+)
+
+const ArticleIndex = ({ articles, isFiltered }) => (
 	<table className="article-index group">
 		<Header />
+		{isFiltered &&
+			clearFilters
+		}
 	  <tbody>
 		    {articles.map(article =>
 		      <Article
