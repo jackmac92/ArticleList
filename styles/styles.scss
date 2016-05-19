@@ -1,14 +1,5 @@
-span, table, a, thead, tbody, tr, td, h1,h3,body, html, ul, li, p, div, span {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-	font-family: 'Lato', sans-serif;
-	text-decoration: none;
-}
-
+@import "reset";
+@import "flipper";
 
 table.article-index {
 	border-collapse: collapse;
@@ -59,6 +50,8 @@ table.article-index {
 		.author {
 			color: #3D78BA;
 			font-size: 14px;
+			margin-left: 5px;
+
 			.redux-link {
 				color: #3D78BA;
 			}
@@ -66,16 +59,18 @@ table.article-index {
 
 		.word-count {
 			text-align: center;
+			font-size: 12px;
 		}
 
 		ul.tag-list {
 			list-style: none;
 			float: right;
+			margin-right: 10px;
 
-			li.tag {
+			li.tag {				
 				vertical-align: bottom;
 				display: inline;
-				font-size: 10px;
+				font-size: 12px;
 				color: #5C7C46;
 				&:after {
 					content: " |";
@@ -90,6 +85,10 @@ table.article-index {
 				}
 			}
 		}
+		.publish-time {
+			font-size: 12px;
+			text-align: center;
+		}
 	}
 }
 
@@ -99,11 +98,4 @@ table.article-index {
 	background: navy;
 	color: white;
 	font-size: 20px;
-}
-.filter-clear {
-	margin: 0 auto;
-}
-
-.footer {
-	padding-bottom: 50px;
 }
