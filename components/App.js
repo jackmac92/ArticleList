@@ -11,6 +11,8 @@ class App extends Component {
 
 
 	render() {
+
+				// <DevTools />
 		return (
 			<div>
 				<SortedArticleList />

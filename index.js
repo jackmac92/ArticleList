@@ -6,7 +6,7 @@ import App from './components/App'
 import configureStore from './store/'
 
 let store = configureStore()
-require('./styles/flipper.scss')
+
 require('./styles/styles.scss')
 
 render(
