@@ -1,0 +1,85 @@
+span, table, a, thead, tbody, tr, td, h1,h3,body, html, ul, li, p, div, span {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	font-family: 'Lato', sans-serif;
+	text-decoration: none;
+}
+
+
+
+table.article-index {
+	border-collapse: collapse;
+	table-layout: fixed;
+
+	thead {
+		z-index: 10;
+		background: linear-gradient(#B33D4C, #842B37);
+
+
+		th {
+			padding: 20px;
+
+			.redux-link {
+				color: white;
+				text-transform: uppercase;
+				text-decoration: none;
+			}
+		}
+	}
+
+	tr.article-item {
+		background: #F8F8F8;
+		position: relative;
+
+		&:nth-child(2n+1) {
+			background: #F4F4F4;
+		}
+
+		td {
+			vertical-align: middle;
+			padding: 5px;
+			word-wrap: break-word;
+		}
+		td.article-image > img {
+			width: 75px;
+		}
+
+		.title {
+			color: #1D5C7F;
+			font-weight: 700;
+			max-width: 90%;
+		}
+
+		.author {
+			color: #3D78BA;
+			font-size: 14px;
+		}
+
+		.word-count {
+			text-align: center;
+		}
+
+		ul.tag-list {
+			list-style: none;
+			float: right;
+
+			li.tag {
+				vertical-align: bottom;
+				display: inline;
+				font-size: 10px;
+				color: #5C7C46;
+				&:after {
+					content: " ";
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	padding-bottom: 50px;
+}
