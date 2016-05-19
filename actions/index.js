@@ -20,28 +20,26 @@ export const fetchAritcles = (last) => {
     dispatch(requestArticles(last))
     const start = last, end = last + 10
     const endpoint = `http://localhost:3001/articles?_start=${start}&_end=${end}`
+    console.log(endpoint)
     return fetch(endpoint)
       .then(response => response.json())
       .then(json => dispatch(receiveArticles(json)))
   }
 }
 
-function shouldFetchArticles(state, last) {
-  const articles = state.articles
-  if (!articles || articles.length == last) {
-    return true
-  } else {
-    return false
-  }
-}
+// function shouldFetchArticles(state, last) {
+//   const articles = state.articles
+//   if (!articles || articles.length == last) {
+//     return true
+//   } else {
+//     return false
+//   }
+// }
 
-export const fetchAritclesIfNeeded = () => {
+export const fetchNextAritcles = () => {
   return (dispatch, getState) => {
-    const currState = getState()
-    const last = currState.articles.length
-    if (shouldFetchArticles(currState, last)) {
-      return dispatch(fetchAritcles(last))
-    }
+    const last = getState().articles.length - 10
+    return dispatch(fetchAritcles(last))
   }
 }
 
@@ -50,6 +48,11 @@ export const setSortParameter = (sortParameter) => {
     type: SET_SORT_PARAMETER,
     sortParameter
   }
+}
+
+
+export const getArticles = () => {
+  return fetchNextAritcles()
 }
 
 

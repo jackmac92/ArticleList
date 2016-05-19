@@ -1,8 +1,8 @@
 import React from 'react'
-
+import MoreButton from '../containers/MoreButton'
 const Footer = () => (
 	<div style={{paddingBottom:"100px"}}>
-		<button>Load More</button>
+		<MoreButton />
 	</div>
 )
 
