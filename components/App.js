@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import DevTools from '../containers/DevTools'
+import SortedArticleList from '../containers/SortedArticleList'
+import Footer from './Footer'
 
 
 class App extends Component {
@@ -11,6 +13,8 @@ class App extends Component {
 	render() {
 		return (
 			<div>
+				<SortedArticleList />
+				<Footer />
 			  <DevTools />
 			</div>
 		)

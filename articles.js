@@ -1,4 +1,4 @@
-[
+const initialArticles = [
     {
         "id": 72717,
         "title": "China's Third Plenum: Everything You Need to Know",
@@ -1106,3 +1106,5 @@
         ]
     }
 ]
+
+export default initialArticles

@@ -1,5 +1,5 @@
 import { REQUEST_ARTICLES, RECEIVE_ARTICLES, ADD_ARTICLE } from '../actions'
-
+import initialArticlesRaw from '../articles'
 const article = (state, action) => {
   switch (action.type) {
     case ADD_ARTICLE:
@@ -21,7 +21,17 @@ const article = (state, action) => {
   }
 }
 
-const articles = (state = [], action) => {
+function prepArticle(a) {
+	const tmp = {
+		type: ADD_ARTICLE,
+		article: a
+	}
+	return article(undefined, tmp)
+}
+
+const initialArticles = initialArticlesRaw.map(prepArticle)
+
+const articles = (state = initialArticles, action) => {
   switch (action.type) {
     case ADD_ARTICLE:
       return [
@@ -29,13 +39,7 @@ const articles = (state = [], action) => {
         article(undefined,action)
       ]
     case RECEIVE_ARTICLES:
-      let newArticles = action.articles.map(a => {
-        const tmp = {
-          type: ADD_ARTICLE,
-          article: a
-        }
-        return article(undefined, tmp)
-      })
+      let newArticles = action.articles.map(prepArticle)
       return [
         ...state,
         ...newArticles

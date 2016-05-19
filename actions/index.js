@@ -1,6 +1,3 @@
-export const REQUEST_ARTICLES = 'REQUEST_ARTICLES'
-export const RECEIVE_ARTICLES = 'RECEIVE_ARTICLES'
-export const ADD_ARTICLE = 'ADD_ARTICLE'
 
 function requestArticles(last) {
   return {
@@ -47,3 +44,16 @@ export const fetchAritclesIfNeeded = () => {
     }
   }
 }
+
+export const setSortParameter = (sortParameter) => {
+  return {
+    type: SET_SORT_PARAMETER,
+    sortParameter
+  }
+}
+
+
+export const REQUEST_ARTICLES = 'REQUEST_ARTICLES'
+export const RECEIVE_ARTICLES = 'RECEIVE_ARTICLES'
+export const ADD_ARTICLE = 'ADD_ARTICLE'
+export const SET_SORT_PARAMETER = 'SET_SORT_PARAMETER'

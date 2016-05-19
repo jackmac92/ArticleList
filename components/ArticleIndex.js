@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import Article from './Article'
-
+import Header from './Header'
 const ArticleIndex = ({ articles }) => (
 	<table className="article-index group">
 		<Header />
