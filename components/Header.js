@@ -5,22 +5,22 @@ const Header = () => (
     <thead>
       <tr>
         <th colSpan="2">
-          <SortLink filter="TITLE">
+          <SortLink parameter="TITLE">
             Unpublished Articles
           </SortLink>
         </th>
         <th>
-          <SortLink filter="AUTHOR">
+          <SortLink parameter="AUTHOR">
             Author
           </SortLink>
         </th>
         <th>
-          <SortLink filter="WORDS">
+          <SortLink parameter="WORDS">
             Words
           </SortLink>
         </th>
         <th>
-          <SortLink filter="NEW">
+          <SortLink parameter="NEW">
             Submitted
           </SortLink>
         </th>

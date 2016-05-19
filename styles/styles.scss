@@ -57,6 +57,9 @@ table.article-index {
 		.author {
 			color: #3D78BA;
 			font-size: 14px;
+			.redux-link {
+				color: #3D78BA;
+			}
 		}
 
 		.word-count {
@@ -74,6 +77,11 @@ table.article-index {
 				color: #5C7C46;
 				&:after {
 					content: " ";
+				}
+
+				.redux-link {
+					color: #5C7C46;
+
 				}
 			}
 		}

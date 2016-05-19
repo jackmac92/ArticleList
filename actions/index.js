@@ -1,10 +1,4 @@
 
-function requestArticles(last) {
-  return {
-    type: REQUEST_ARTICLES,
-    last
-  }
-}
 
 function receiveArticles(json) {
   return {
@@ -17,7 +11,6 @@ function receiveArticles(json) {
 
 export const fetchAritcles = (last) => {
   return dispatch => {
-    dispatch(requestArticles(last))
     const start = last, end = last + 10
     const endpoint = `http://localhost:3001/articles?_start=${start}&_end=${end}`
     return fetch(endpoint)

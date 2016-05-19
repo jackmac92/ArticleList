@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-const Link = ({ active, children, onClick }) => {
+const Link = ({ active, children, onClick, flippable }) => {
   if (active) {
     return <span className="redux-link">{children}</span>
   }

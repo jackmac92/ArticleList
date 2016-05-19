@@ -3,16 +3,18 @@ import { setSortParameter } from '../actions'
 import ArticleIndex from '../components/ArticleIndex'
 import _ from 'lodash';
 
-const getSortedArticles = (articles, sortParameter) => {
+const getSortedArticles = (articles, sortParameterInfo) => {
+  const sortParameter = sortParameterInfo[0]
+  const ordering = (sortParameterInfo[1]) ? 'desc' : 'asc'
   switch (sortParameter) {
     case 'TITLE':
-      return _.sortBy(articles, (a) => a.title )
+      return _.orderBy(articles,['title'],[ordering])
     case 'AUTHOR':
-      return _.sortBy(articles, (a) => a.profile.first_name )
+      return _.orderBy(articles,['profile.first_name' ],[ordering])
     case 'WORDS':
-      return _.sortBy(articles, (a) => a.words )
+      return _.orderBy(articles,['words'],[ordering])
     case 'NEW':
-      return _.sortBy(articles, (a) => a.publish_at )
+      return _.orderBy(articles,['publish_at'],[ordering])
     default:
       return articles
   }
