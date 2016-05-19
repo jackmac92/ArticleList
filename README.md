@@ -2,7 +2,7 @@
 React/ Redux
 
 ## How to run
-`npm start` kicks off the development server, along with a json-server to serve additional articles (json-server will run on port 3001). Then navigate to http://localhost:3000 to check out the project
+First run `npm install`, followed by `npm start` which kicks off the development server, along with a json-server to serve additional articles (json-server will run on port 3001). Then navigate to http://localhost:3000 to check out the project
 
 ## Features
 * Sortable by Title, Author, Word Count, and Submission Time by clicking on the relevant header. Clicking on the active sort header will toggle the sort between ascending and descending.
