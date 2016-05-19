@@ -18,10 +18,24 @@ const getSortedArticles = (articles, sortParameter) => {
   }
 }
 
+const getVisibleArticles = (articles, visibilityFilter) => {
+  const type = visibilityFilter[0]
+  const filter = visibilityFilter[1]
+  switch (type) {
+    case 'TAG':
+      return _.filter(articles, (a) => { return _.find(a.tags, ['id', filter]) })
+    case 'AUTHOR':
+      return _.filter(articles, (a) => { return a.profile.id == filter})
+    default:
+      return articles
+  }
+}
+
 
 const mapStateToProps = (state) => {
+  const visibleArticles = getVisibleArticles(state.articles, state.visibilityFilter)
   return {
-    articles: getSortedArticles(state.articles, state.sortParameter)
+    articles: getSortedArticles(visibleArticles, state.sortParameter)
   }
 }
 

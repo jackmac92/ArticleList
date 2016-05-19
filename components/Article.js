@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import TimeAgo from 'react-timeago'
-
+import FilterLink from '../containers/FilterLink'
 
 const Article = ({ profile, title, publish_at, words, image, tags, url }) => (
   <tr className="article-item">
@@ -12,11 +12,13 @@ const Article = ({ profile, title, publish_at, words, image, tags, url }) => (
         <h3 className="title" >{title}</h3>
       </a>
       <ul className="tag-list">
-        {tags.map(t => <li key={t.id} className="tag"> {t.name}</li> )}
+        {tags.map(t => <li key={t.id} className='tag'> <FilterLink filter={['TAG',t.id]}>{t.name}</FilterLink></li> )}
       </ul>
     </td>
     <td className="author">
+      <FilterLink filter={["AUTHOR",profile.id]}>
         {`${profile.first_name} ${profile.last_name}`}
+      </FilterLink>
     </td>
     <td className="flip-container word-count">
       <div className="flipper">

@@ -20,21 +20,18 @@ export const fetchAritcles = (last) => {
     dispatch(requestArticles(last))
     const start = last, end = last + 10
     const endpoint = `http://localhost:3001/articles?_start=${start}&_end=${end}`
-    console.log(endpoint)
     return fetch(endpoint)
       .then(response => response.json())
       .then(json => dispatch(receiveArticles(json)))
   }
 }
 
-// function shouldFetchArticles(state, last) {
-//   const articles = state.articles
-//   if (!articles || articles.length == last) {
-//     return true
-//   } else {
-//     return false
-//   }
-// }
+export const setVisibilityFilter = (visibilityFilter) => {
+  return {
+    type: SET_VISIBILITY_FILTER,
+    visibilityFilter
+  }
+}
 
 export const fetchNextAritcles = () => {
   return (dispatch, getState) => {
@@ -60,3 +57,4 @@ export const REQUEST_ARTICLES = 'REQUEST_ARTICLES'
 export const RECEIVE_ARTICLES = 'RECEIVE_ARTICLES'
 export const ADD_ARTICLE = 'ADD_ARTICLE'
 export const SET_SORT_PARAMETER = 'SET_SORT_PARAMETER'
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
