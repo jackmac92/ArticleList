@@ -1,5 +1,6 @@
 # Mic Frontend Dev Test
 React/ Redux
+
 ## How to run
 `npm start` kicks off the development server, along with a json-server to serve additional articles (json-server will run on port 3001). Then navigate to http://localhost:3000 to check out the project
 
@@ -10,7 +11,8 @@ React/ Redux
 * Filter and Sort State are persisted via localstorage
 
 ## Todos
-* Currently the webpack size is very large, although much of this comes from development tools, there are a number of optimizations that I would want to include for production.
+* Currently the webpack size is large, although much of this comes from development tools, there are a number of optimizations that I would want to include for production.
+* Configure separate production and development weback configs
 * setInterval to check for newest Submissions
 * Persistent app state should be handled with middleware
 * Change state of "Load More" button once all articles fetched
